@@ -1,0 +1,19 @@
+{
+  "name": "anime",
+  "version": "1.0.0",
+  "description": "\"anime app\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoopsagarK/anime.git"
+  },
+  "author": "Roopsagar K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoopsagarK/anime/issues"
+  },
+  "homepage": "https://github.com/RoopsagarK/anime#readme"
+}
