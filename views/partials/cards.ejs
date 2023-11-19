@@ -1,0 +1,9 @@
+<div class="container">
+    <% animes.forEach(anime => { %>
+        <div class="card">
+            <img src="<%= anime.entry.images.jpg.image_url %>" alt="<%= anime.entry.title %>">
+            <h2><%= anime.entry.title %></h2>
+            <p>Votes: <%= anime.votes %></p>
+        </div>
+    <% }); %>
+</div>

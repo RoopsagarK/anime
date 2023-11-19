@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+@font-face {
+    font-family: 'Manga Temple';
+    src: url('/styles/mangatb.ttf') format('truetype'); /* Update the path accordingly */
+    font-weight: normal;
+    font-style: normal;
+  }
+  body {
+    font-family: 'Manga Temple', sans-serif;
+    /* Additional styling for your body */
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Manga Temple', sans-serif;
+    /* Additional styling for your headings */
+  }
+    
+.nav {
+    height: auto;
+    background-color: #131720;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 17px;
+    justify-content: space-between;
+    overflow: hidden;
+    z-index: 999;
+    position: sticky;
+    align-items: center;
+}
+.nav > a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+.nav > a > span {
+    color: #ff4500;
+}
+.search-container {
+    height: 40px;
+    width: 300px;
+}
+
+.search-container > input {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.hero {
+    background: url('/images/hero.jpg') no-repeat center center/cover;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: inset 400px 200px 250px #000000;
+    opacity: 0.8;
+}
+.hero-content {
+    max-width: 600px;
+    z-index: 50;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    z-index: 50;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    z-index: 50;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.cards {
+    background-color: #131720;
+}
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+    .search-container {
+        width: 200px;
+    }
+}
+
