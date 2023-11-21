@@ -5,25 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/cards.css">
-    <title>Anime</title>
+    <title>AnimeSphere</title>
 </head>
 <body>
     <%- include("./partials/header.ejs") %>
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to Anime World</h1>
-            <p>Explore the best anime series and movies</p>
-            <a href="#cards" class="cta-button">Explore Now</a>
-        </div>
-        <script>
-            document.querySelector('.cta-button').addEventListener('click', function(event) {
-                event.preventDefault();
-                document.querySelector('#cards').scrollIntoView({ behavior: 'smooth' });
-            });
-        </script>
-    </section>
-    <section class="cards" id="cards">
-        <%- include("./partials/cards.ejs") %>
-    </section>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Anime World</h1>
+                <p>Explore the best anime series and movies</p>
+                <a href="#cards" class="cta-button">Explore Now</a>
+            </div>
+        </section>
+        <section class="cards" id="cards">
+            <%- include("./partials/cards.ejs") %>
+        </section>
+    <script src="/scripts/main.js"></script>
 </body>
 </html>
