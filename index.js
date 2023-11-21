@@ -3,7 +3,7 @@ import axios from "axios";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 3000;
+const port = 3000 ;
 const API_URL = "https://api.jikan.moe/v4"
 
 app.use(express.static("public"));
