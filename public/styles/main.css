@@ -41,8 +41,8 @@
     color: #ff4500;
 }
 .search-container {
-    height: 40px;
-    width: 300px;
+    display: flex;
+    align-items: center;
 }
 form > input {
     height: 40px;
@@ -98,6 +98,12 @@ form > input {
     background-color: #131720;
 }
 @media (max-width: 600px) {
+    .nav > a {
+        font-size: small;
+    }
+    form > input {
+        height: 20px;
+    }
     .hero h1 {
         font-size: 2em;
     }

@@ -23,6 +23,10 @@ app.post("/search", async (req, res) => {
     res.render("searchPage.ejs", { animes: result.data, req: "search" });
 });
 
+app.get("/animes/:title", (req, res) => {
+    console.log(req.params);
+});
+
 app.listen(port, () => {
     console.log(`app is running at port ${port}`);
 });

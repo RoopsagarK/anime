@@ -7,7 +7,11 @@ exploreButton.addEventListener('click', function(event) {
     document.querySelector('#cards').scrollIntoView({ behavior: 'smooth' });
 });
 
-// form.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     searchItem.value = "";
-// });
+form.addEventListener("submit", (event) => {
+    searchItem.value = "";
+});
+
+const kebabCase = string => string
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();

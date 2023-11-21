@@ -5,10 +5,12 @@
                 <img src="<%= anime.entry.images.jpg.image_url %>" alt="<%= anime.entry.title %>">
                 <h2><%= anime.entry.title %></h2>
                 <p>Votes: <%= anime.votes %></p>
+                <a href="/animes/<%= anime.entry.title %>"></a>
             <% } else if(locals.req === "search") { %>
                 <img src="<%= anime.images.jpg.image_url %>" alt="<%= anime.titles[0].title %>">
                 <h2><%= anime.titles[0].title %></h2>
                 <p>Popularity: <%= anime.popularity %></p>
+                <a href="/animes/<%= anime.titles[0].title %>"></a>
             <% } %>
         </div>
     <% }); %>
