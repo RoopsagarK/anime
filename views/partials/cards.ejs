@@ -2,15 +2,17 @@
     <% animes.forEach(anime => { %>
         <div class="card">
             <% if(locals.req === "root") { %>
-                <img src="<%= anime.entry.images.jpg.image_url %>" alt="<%= anime.entry.title %>">
-                <h2><%= anime.entry.title %></h2>
-                <p>Votes: <%= anime.votes %></p>
-                <a href="/animes/<%= anime.entry.title %>"></a>
+                <a href="/animes/<%= anime.entry.title %>">
+                    <img src="<%= anime.entry.images.jpg.image_url %>" alt="<%= anime.entry.title %>">
+                    <h2><%= anime.entry.title %></h2>
+                    <p>Votes: <%= anime.votes %></p>
+                </a>
             <% } else if(locals.req === "search") { %>
-                <img src="<%= anime.images.jpg.image_url %>" alt="<%= anime.titles[0].title %>">
-                <h2><%= anime.titles[0].title %></h2>
-                <p>Popularity: <%= anime.popularity %></p>
-                <a href="/animes/<%= anime.titles[0].title %>"></a>
+                <a href="/animes/<%= anime.titles[0].title %>">
+                    <img src="<%= anime.images.jpg.image_url %>" alt="<%= anime.titles[0].title %>">
+                    <h2><%= anime.titles[0].title %></h2>
+                    <p>Popularity: <%= anime.popularity %></p>
+                </a>
             <% } %>
         </div>
     <% }); %>

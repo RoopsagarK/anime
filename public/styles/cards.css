@@ -15,6 +15,10 @@
     max-width: 200px;
 }
 
+.card > a {
+    text-decoration: none;
+}
+
 .card img {
     width: 100%;
     height: auto;
@@ -33,6 +37,6 @@
 @media (max-width: 600px) {
     .card {
         flex: 1 1 100%;
-        max-width: 100%;
+        max-width: 80%;
     }
 }
