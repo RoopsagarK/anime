@@ -5,7 +5,7 @@
 }
 @font-face {
     font-family: 'Manga Temple';
-    src: url('/styles/mangatb.ttf') format('truetype'); /* Update the path accordingly */
+    src: url('/styles/mangatb.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
   }
@@ -17,7 +17,6 @@
   h1, h2, h3 {
     font-family: 'Manga Temple', sans-serif;
   }
-    
 .nav {
     height: auto;
     background-color: #131720;
@@ -53,7 +52,7 @@ form > input {
 }
 .hero {
     background: url('/images/hero.jpg') no-repeat center center/cover;
-    height: 85vh;
+    height: 87vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,7 +80,7 @@ form > input {
     font-size: 2.5em;
     z-index: 50;
 }
-.hero p {
+.hero h3 {
     font-size: 1.2em;
     margin: 20px 0;
     z-index: 50;

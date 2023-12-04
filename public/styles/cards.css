@@ -13,6 +13,7 @@
     cursor: pointer;
     flex: 1 1 200px;
     max-width: 200px;
+    overflow: hidden;
 }
 
 .card > a {
@@ -28,9 +29,10 @@
     font-size: 1.2em;
     margin: 10px 0;
     color: white;
+    display: flex;
 }
 
-.card p {
+.card h4 {
     color: #ff4500;
 }
 

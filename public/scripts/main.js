@@ -6,7 +6,7 @@ const goto = document.querySelector(".goto");
 
 exploreButton.addEventListener('click', function(event) {
     event.preventDefault();
-    document.querySelector('#cards').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('#carousel').scrollIntoView({ behavior: 'smooth' });
 });
 
 const kebabCase = string => string

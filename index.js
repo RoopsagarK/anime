@@ -1,33 +1,44 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
+import pg from "pg";
 
 const app = express();
 const port = process.env.PORT || 3000;
 const API_URL = "https://api.jikan.moe/v4";
-let recommendationResult = "";
+const db = new pg.Client({
+    user: "postgres",
+    password: "roop9854",
+    database: "anime",
+    host: "localhost",
+    port: 5432,
+});
+db.connect();
+
 let searchResult = "";
 
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.get("/", async (req, res) => {
-    const response = await axios.get(API_URL + "/anime/1/recommendations");
-    recommendationResult = response.data.data;
-    recommendationResult.length = 50;
-    res.render("index.ejs", { animes: recommendationResult, req: "root" });
+    const response = await axios.get("https://kitsu.io/api/edge/trending/anime");
+    const animeRecommendation = await axios.get(API_URL + "/recommendations/anime")
+    const trendingAnime = response.data.data;
+    res.render("index.ejs", { animes: trendingAnime, req: "root", recommendations: animeRecommendation.data.data });
 });
 
 app.post("/search", async (req, res) => {
     const searchValue = req.body.query;
     const response = await axios.get(API_URL + `/anime?q=${searchValue}`);
     searchResult = response.data.data;
-    res.render("searchPage.ejs", { animes: searchResult, req: "search" });
+    res.render("searchPage.ejs", { searchResults: searchResult, req: "search" });
 });
 
-app.get("/animes/:title", (req, res) => {
-    console.log(req.params);
-    res.render("cardPage.ejs");
+app.get("/animes/:id/:title", async (req, res) => {
+    const clikedAnime = req.params;
+    const info = await axios.get(API_URL + `/anime/${clikedAnime.id}/full`);
+    const details = info.data.data;
+    res.render("cardPage.ejs", {data: details});
 });
 
 app.listen(port, () => {

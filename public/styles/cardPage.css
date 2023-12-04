@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+@font-face {
+  font-family: 'Manga Temple';
+  src: url('/styles/mangatb.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+h1, h2, h3 {
+  font-family: 'Manga Temple', sans-serif;
+  color: #ff4500;
+}
+body {
+  background-color: #131720;
+}

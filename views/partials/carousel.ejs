@@ -1,0 +1,42 @@
+<div class="carousel">
+  <% animes.forEach((anime, index) => { %>
+      <div class="carousel-item <%= index === 0 ? 'active' : '' %>  fade">
+          <div class="shade"></div>
+          <img src="<%= anime.attributes.coverImage.small %>" alt="<%= anime.attributes.canonicalTitle %>">
+          <h1><%= anime.attributes.canonicalTitle %></h1>
+          <div class="carousel-caption">
+              <p><%= anime.attributes.synopsis.split(' ').slice(0, 100).join(' ') %> ...</p>
+          </div>
+      </div>
+  <% }); %>
+  <a class="carousel-control-prev" onclick="changeSlide(-1)">&#10094;</a>
+  <a class="carousel-control-next" onclick="changeSlide(1)">&#10095;</a>
+</div><br>
+<div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+    <% animes.forEach((anime, index) => { %>
+        <span class="dot <%= index === 0 ? 'active' : '' %>" onclick="currentSlide('<%= index %>')" style="margin: 8px;"></span>
+    <% }); %>
+</div>
+<script>
+  let slideIndex = 0;
+
+  function changeSlide(n) {
+    const slides = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.dot');
+    slideIndex += n;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === slideIndex);
+    });
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === slideIndex);
+    });
+}
+function currentSlide(n) {
+    changeSlide(n - slideIndex);
+}
+setInterval(() => {
+    changeSlide(1);
+}, 5000);
+</script>

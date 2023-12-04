@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/cards.css">
+    <link rel="stylesheet" href="styles/carousel.css">
     <title>AnimeSphere</title>
 </head>
 <body>
@@ -12,11 +13,14 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Welcome to Anime World</h1>
-                <p>Explore the best anime series and movies</p>
-                <a href="#cards" class="cta-button">Explore Now</a>
+                <h3>Explore the best anime series and movies</h3>
+                <a href="#carousel" class="cta-button">Explore Now</a>
             </div>
         </section>
-        <section class="cards" id="cards">
+        <section class="carousel" id="carousel">
+            <%- include("./partials/carousel.ejs") %>
+        </section>
+        <section class="cards">
             <%- include("./partials/cards.ejs") %>
         </section>
     <script src="/scripts/main.js"></script>

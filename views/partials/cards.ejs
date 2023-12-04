@@ -1,19 +1,24 @@
 <div class="container">
-    <% animes.forEach(anime => { %>
-        <div class="card">
-            <% if(locals.req === "root") { %>
-                <a href="/animes/<%= anime.entry.title %>">
-                    <img src="<%= anime.entry.images.jpg.image_url %>" alt="<%= anime.entry.title %>">
-                    <h2><%= anime.entry.title %></h2>
-                    <p>Votes: <%= anime.votes %></p>
-                </a>
-            <% } else if(locals.req === "search") { %>
-                <a href="/animes/<%= anime.titles[0].title %>">
-                    <img src="<%= anime.images.jpg.image_url %>" alt="<%= anime.titles[0].title %>">
-                    <h2><%= anime.titles[0].title %></h2>
-                    <p>Popularity: <%= anime.popularity %></p>
-                </a>
-            <% } %>
-        </div>
-    <% }); %>
+    <% if(req === 'root') { %>
+        <% recommendations.forEach(anime => { %>
+            <div class="card">
+                    <a href="/animes/<%= anime.entry[0].mal_id %>/<%= anime.entry[0].title%>">
+                        <img src="<%= anime.entry[0].images.jpg.image_url %>" alt="<%= anime.entry[0].title %>">
+                        <h2><%= anime.entry[0].title.substring(0, 40) %><%= anime.entry[0].title.length > 40 ? '...' : '' %></h2>
+                        <p></p>
+                    </a>
+            </div>
+        <% }); %>
+    <% } else if(req === 'search') { %>
+        <% searchResults.forEach(anime => { %>
+            <div class="card">
+                    <a href="/animes/<%= anime.mal_id %>/<%= anime.title %>">
+                        <img src="<%= anime.images.jpg.image_url %>" alt="<%= anime.title %>">
+                        <h2><%= anime.title.substring(0, 40) %><%= anime.title.length > 40 ? '...' : '' %></h2>
+                        <h4>Popularity: <%= anime.popularity %></h4>
+                    </a>
+            </div>
+        <% }); %>
+
+    <% } %>
 </div>
