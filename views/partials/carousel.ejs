@@ -1,11 +1,13 @@
 <div class="carousel">
   <% animes.forEach((anime, index) => { %>
-      <div class="carousel-item <%= index === 0 ? 'active' : '' %>  fade">
+      <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
           <div class="shade"></div>
-          <img src="<%= anime.attributes.coverImage.small %>" alt="<%= anime.attributes.canonicalTitle %>">
-          <h1><%= anime.attributes.canonicalTitle %></h1>
+          <img src="<%= anime.attributes.coverImage.small%> " alt="<%= anime.attributes.canonicalTitle %>">
+          <div class="anime-title">
+            <h1><%= anime.attributes.canonicalTitle %></h1>
+          </div>
           <div class="carousel-caption">
-              <p><%= anime.attributes.synopsis.split(' ').slice(0, 100).join(' ') %> ...</p>
+              <p><%= anime.attributes.synopsis.substring(0, 380) %> ...</p>
           </div>
       </div>
   <% }); %>
