@@ -13,8 +13,21 @@
         <div class="info">
             <h1><%= data[0].attributes.canonicalTitle %> (<%= data[0].attributes.titles.ja_jp %>)</h1>
             <p>Average Rating: <%= data[0].attributes.averageRating %> | Favorites: <%= data[0].attributes.favoritesCount %> | Episodes: <%= data[0].attributes.episodeCount %></p>
+            <a href="#trailer" class="trailer-btn">Trailer</a>
         </div>
     </section>
+    <section class="information">
+        <div class="container">
+            <p><%= data2.synopsis %></p>
+        </div>
+    </section>
+    <section class="trailer" id="trailer">
+        <div class="video">
+            <h1>Trailer</h1>
+            <iframe width="800" height="350" src="<%= data2.trailer.embed_url %>" title="YouTube video player" frameborder="0" allow="accelerometer;"></iframe>
+        </div>
+    </section>
+
 </body>
 
 </html>

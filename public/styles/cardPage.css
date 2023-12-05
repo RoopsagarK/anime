@@ -58,14 +58,57 @@ body {
   z-index: 99;
 }
 .info > p {
-  margin: 8px;
+  margin: 10px;
 }
-.info h1{
+ h1{
   color: white;
   font-size: 30px;
   text-shadow: 2px 2px 8px #ff4500;
   padding: 10px;
 }
+.information {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+}
+.container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container > p {
+  text-align: justify;
+}
+.video {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+iframe {
+  margin: 15px;
+  border: 2px solid #ff4500;
+}
+.trailer-btn {
+  display: flex;
+  padding: 10px 20px;
+  background-color: #ff4500;
+  font-family: 'Manga Temple';
+  box-shadow: 6px 6px 8px white;
+  width: 190px;
+  justify-content: center;
+  margin-left: 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
 @media (max-width: 600px) {
   .hero > img {
     object-position: right;
@@ -76,5 +119,17 @@ body {
   }
   .info h1{
     font-size: 15px;
+  }
+  .trailer-btn {
+    width: 115px;
+    padding: 7px 12px;
+  }
+  .video {
+    display: flex;
+  }
+  iframe {
+    width: 420px;
+    border: 2px solid #ff4500;
+    padding: 10px;
   }
 }

@@ -1,19 +1,10 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
-import pg from "pg";
 
 const app = express();
 const port = process.env.PORT || 3000;
 const API_URL = "https://api.jikan.moe/v4";
-const db = new pg.Client({
-    user: "postgres",
-    password: "roop9854",
-    database: "anime",
-    host: "localhost",
-    port: 5432,
-});
-db.connect();
 
 let searchResult = "";
 
@@ -37,10 +28,13 @@ app.post("/search", async (req, res) => {
 
 app.get("/animes/:id/:title", async (req, res) => {
     const clikedAnime = req.params;
+    console.log(clikedAnime)
     try{
         const info = await axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${clikedAnime.title}`);
+        const info2 = await axios.get(API_URL + `/anime/${clikedAnime.id}/full`);
+        console.log(info2.data.data);
         const details = info.data.data;
-        res.render("cardPage.ejs", {data: details});
+        res.render("cardPage.ejs", {data: details, data2: info2.data.data});
     }catch(error){
         console.error(error.stack);
     }
