@@ -1,5 +1,6 @@
 p {
-    font-family: cursive;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
 }
 .carousel {
     position: relative;
@@ -56,7 +57,7 @@ p {
     bottom: 0;
     left: 0;
     right: 0;
-    background: black;
+    background: transparent;
     opacity: 0.65;
 }
 .shade::after {
@@ -68,7 +69,7 @@ p {
     height: 100%;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.6);
-    box-shadow: inset 300px 0px 250px #aeb5bc;
+    box-shadow: inset 200px 3px 400px 20px rgb(0, 0, 0);
     opacity: 0.9;
 }
 .carousel-control-prev,
@@ -118,10 +119,13 @@ p {
   @media (max-width: 600px) {
     .anime-title {
         padding: 0%;
-        top: 20%;
+        top: 10%;
         justify-content: center;
     }
     .anime-title > h1 {
         font-size: medium;
+    }
+    .carousel img {
+        object-fit: cover;
     }
 }

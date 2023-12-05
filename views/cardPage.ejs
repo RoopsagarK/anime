@@ -7,7 +7,14 @@
     <title>AnimeSphere</title>
 </head>
 <body>
-    
+    <section class="hero">
+        <img src="<%= data[0].attributes.coverImage.original %>" alt="<%= data[0].attributes.canonicalTitle %>">
+        <div class="box"></div>
+        <div class="info">
+            <h1><%= data[0].attributes.canonicalTitle %> (<%= data[0].attributes.titles.ja_jp %>)</h1>
+            <p>Average Rating: <%= data[0].attributes.averageRating %> | Favorites: <%= data[0].attributes.favoritesCount %> | Episodes: <%= data[0].attributes.episodeCount %></p>
+        </div>
+    </section>
 </body>
 
 </html>

@@ -13,6 +13,68 @@ h1, h2, h3 {
   font-family: 'Manga Temple', sans-serif;
   color: #ff4500;
 }
+p {
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  font-weight: 600;
+}
 body {
   background-color: #131720;
+}
+.hero {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 60vh;
+}
+.hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top bottom;
+}
+.box {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: inset 400px 100px 250px #0a314b;
+    opacity: 0.9;
+}
+.info {
+  position: absolute;
+  bottom: 40px;
+  padding: 20px;
+  z-index: 99;
+}
+.info > p {
+  margin: 8px;
+}
+.info h1{
+  color: white;
+  font-size: 30px;
+  text-shadow: 2px 2px 8px #ff4500;
+  padding: 10px;
+}
+@media (max-width: 600px) {
+  .hero > img {
+    object-position: right;
+    object-fit: cover;
+  }
+  .box::after {
+    box-shadow: inset 200px 100px 250px #0a314b;
+  }
+  .info h1{
+    font-size: 15px;
+  }
 }

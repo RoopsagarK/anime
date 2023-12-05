@@ -24,6 +24,7 @@ app.get("/", async (req, res) => {
     const response = await axios.get("https://kitsu.io/api/edge/trending/anime");
     const animeRecommendation = await axios.get(API_URL + "/recommendations/anime")
     const trendingAnime = response.data.data;
+
     res.render("index.ejs", { animes: trendingAnime, req: "root", recommendations: animeRecommendation.data.data });
 });
 
@@ -36,9 +37,13 @@ app.post("/search", async (req, res) => {
 
 app.get("/animes/:id/:title", async (req, res) => {
     const clikedAnime = req.params;
-    const info = await axios.get(API_URL + `/anime/${clikedAnime.id}/full`);
-    const details = info.data.data;
-    res.render("cardPage.ejs", {data: details});
+    try{
+        const info = await axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${clikedAnime.title}`);
+        const details = info.data.data;
+        res.render("cardPage.ejs", {data: details});
+    }catch(error){
+        console.error(error.stack);
+    }
 });
 
 app.listen(port, () => {

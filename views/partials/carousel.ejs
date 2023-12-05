@@ -2,8 +2,7 @@
   <% animes.forEach((anime, index) => { %>
       <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
           <div class="shade"></div>
-          <img src="<%= anime.attributes.coverImage.small%> " alt="<%= anime.attributes.canonicalTitle %>">
-          <div class="anime-title">
+          <img src="<%= anime.attributes.coverImage.small%>" data-poster-url="<%= anime.attributes.posterImage.small %>" alt="<%= anime.attributes.canonicalTitle %>">          <div class="anime-title">
             <h1><%= anime.attributes.canonicalTitle %></h1>
           </div>
           <div class="carousel-caption">
@@ -21,6 +20,18 @@
 </div>
 <script>
   let slideIndex = 0;
+  window.addEventListener('resize', updateCarouselImages);
+    updateCarouselImages(); 
+
+function updateCarouselImages() {
+    const isPhoneView = window.innerWidth <= 600; 
+    const carouselImages = document.querySelectorAll('.carousel img');
+    carouselImages.forEach(img => {
+        const coverUrl = img.src;
+        const posterUrl = img.getAttribute('data-poster-url');
+        img.src = isPhoneView ? posterUrl : coverUrl;
+    });
+}
 
   function changeSlide(n) {
     const slides = document.querySelectorAll('.carousel-item');
