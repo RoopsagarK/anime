@@ -17,3 +17,4 @@ const kebabCase = string => string
 card.addEventListener("click", function(){
     goto.click();
 });
+

@@ -43,12 +43,13 @@
     display: flex;
     align-items: center;
 }
+
 form > input {
     height: 40px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
     display: inline-flex;
-    padding: 10px;
+    padding: 15px;
 }
 .hero {
     background: url('/images/hero.jpg') no-repeat center center/cover;

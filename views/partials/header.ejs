@@ -3,6 +3,27 @@
     <div class="search-container">
         <form id="searchForm" action="/search" method="post">
             <input type="search" name="query" id="search" placeholder="Search...">
+            <button type="submit"><img src="/images/search.png" alt="search icon" width="10px" height="10px"></button>
         </form>
     </div>
 </div>
+<style>
+form {
+    display: flex;
+}
+form > button {
+    background-color: transparent;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+    padding-left: 10px;
+	outline: inherit;
+}
+form > button > img { 
+    width: 25px;
+    height: 25px; 
+}
+</style>

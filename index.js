@@ -28,16 +28,28 @@ app.post("/search", async (req, res) => {
 
 app.get("/animes/:id/:title", async (req, res) => {
     const clikedAnime = req.params;
-    console.log(clikedAnime)
     try{
         const info = await axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${clikedAnime.title}`);
         const info2 = await axios.get(API_URL + `/anime/${clikedAnime.id}/full`);
-        console.log(info2.data.data);
+        const characters = await axios.get( API_URL + `/anime/${clikedAnime.id}/characters`);
+        const charactersLength = characters.data.data.length;
+        characters.data.data.length = 6;
+        console.log(characters.data.data.length);
         const details = info.data.data;
-        res.render("cardPage.ejs", {data: details, data2: info2.data.data});
+        res.render("cardPage.ejs", {
+            data: details, data2: info2.data.data, 
+            characters: characters.data.data,
+            charactersLength: charactersLength
+        });
     }catch(error){
         console.error(error.stack);
     }
+});
+
+app.get("/characters/:id", async (req, res) => {
+    const animeId = req.params;
+    const characters = await axios.get( API_URL + `/anime/${animeId.id}/characters`);
+    res.render("characters.ejs", {characters: characters.data.data});
 });
 
 app.listen(port, () => {

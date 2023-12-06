@@ -8,7 +8,7 @@
 </head>
 <body>
     <section class="hero">
-        <img src="<%= data[0].attributes.coverImage.original %>" alt="<%= data[0].attributes.canonicalTitle %>">
+        <img src="<%= data[0].attributes.coverImage.original %>" data-poster-url="<%= data[0].attributes.posterImage.original %>" alt="<%= data[0].attributes.canonicalTitle %>">
         <div class="box"></div>
         <div class="info">
             <h1><%= data[0].attributes.canonicalTitle %> (<%= data[0].attributes.titles.ja_jp %>)</h1>
@@ -18,16 +18,49 @@
     </section>
     <section class="information">
         <div class="container">
-            <p><%= data2.synopsis %></p>
+            <p><%= data2.synopsis %></p><br>
+            <p style="margin: 15px; padding: 10px; color: #ff4500;">Duration: <%= data2.duration %> | Content Rating: <%= data2.rating %></p>
         </div>
     </section>
     <section class="trailer" id="trailer">
         <div class="video">
             <h1>Trailer</h1>
-            <iframe width="800" height="350" src="<%= data2.trailer.embed_url %>" title="YouTube video player" frameborder="0" allow="accelerometer;"></iframe>
+            <% if(!data2.trailer.embed_url) { %>
+                <h1>No Video Available!</h1>
+            <% } %>
+            <iframe width="800" height="350" src="<%= data2.trailer.embed_url %>" title="YouTube video player" frameborder="0" allow="accelerometer; encrypted-media; gyroscope;"></iframe>
         </div>
     </section>
+    <section class="characters">
+    <h1>Characters</h1>
+    <div class="charactersContainer">
+            <% characters.forEach(character => { %>
+                <div class="card">
+                    <img src="<%= character.character.images.jpg.image_url %>" alt="<%= character.character.name %>">
+                    <h2><%= character.character.name %></h2>
+                </div>
+            <% }) %>
+            <a href="/characters/<%= data2.mal_id %>" class="total"><p>+ <%= charactersLength %> more characters</p> <img src="/images/rightArrow.png"> </a>
+    </div>    
+    </section>
+<script src="/scripts/main.js"></script>
+</body> 
+<script>
+const trailer = document.querySelector(".trailer-btn");
+trailer.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.querySelector('#trailer').scrollIntoView({ behavior: 'smooth' });
+});
 
-</body>
+window.addEventListener('resize', updateBannerImage);
+updateBannerImage(); 
 
+function updateBannerImage() {
+    const isPhoneView = window.innerWidth <= 600; 
+    const img = document.querySelector('.hero > img');
+    const coverUrl = img.src;
+    const posterUrl = img.getAttribute('data-poster-url');
+    img.src = isPhoneView ? posterUrl : coverUrl;
+}
+</script>
 </html>
