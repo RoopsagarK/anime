@@ -19,7 +19,9 @@
     <section class="information">
         <div class="container">
             <p><%= data2.synopsis %></p><br>
-            <p style="margin: 15px; padding: 10px; color: #ff4500;">Duration: <%= data2.duration %> | Content Rating: <%= data2.rating %></p>
+            <p style="margin: 15px; padding: 10px; color: #ff4500;">Duration: <%= data2.duration %> | Content Rating: <%= data2.rating %> | Streamed In:  <% stream.forEach(element => { %>
+                <%= element.name %> . 
+            <% }); %> </p>
         </div>
     </section>
     <section class="trailer" id="trailer">

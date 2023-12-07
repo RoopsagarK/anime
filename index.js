@@ -32,14 +32,17 @@ app.get("/animes/:id/:title", async (req, res) => {
         const info = await axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${clikedAnime.title}`);
         const info2 = await axios.get(API_URL + `/anime/${clikedAnime.id}/full`);
         const characters = await axios.get( API_URL + `/anime/${clikedAnime.id}/characters`);
+        const stremed = await axios.get(API_URL + `/anime/${clikedAnime.id}/streaming`)
         const charactersLength = characters.data.data.length;
         characters.data.data.length = 6;
-        console.log(characters.data.data.length);
         const details = info.data.data;
+        const genres = info2.data.data.genres[0].name;
+        console.log(stremed.data)
         res.render("cardPage.ejs", {
             data: details, data2: info2.data.data, 
             characters: characters.data.data,
-            charactersLength: charactersLength
+            charactersLength: charactersLength,
+            stream: stremed.data.data
         });
     }catch(error){
         console.error(error.stack);

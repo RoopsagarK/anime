@@ -2,7 +2,8 @@
   <% animes.forEach((anime, index) => { %>
       <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
           <div class="shade"></div>
-          <img src="<%= anime.attributes.coverImage.small%>" data-poster-url="<%= anime.attributes.posterImage.small %>" alt="<%= anime.attributes.canonicalTitle %>">          <div class="anime-title">
+          <img src="<%= anime.attributes.coverImage.small%>" data-poster-url="<%= anime.attributes.posterImage.small %>" alt="<%= anime.attributes.canonicalTitle %>">
+          <div class="anime-title">
             <h1><%= anime.attributes.canonicalTitle %></h1>
           </div>
           <div class="carousel-caption">
