@@ -24,19 +24,19 @@ Follow these steps to run the project locally:
    ```bash
    git clone https://github.com/your-username/anime-sphere.git
    
-Navigate to the project directory:
-
+2. Navigate to the project directory:
+   ```bash
    cd anime-sphere
 
-Install dependencies:
-
+3. Install dependencies:
+   ```bash
    npm install
 
 
 ### Run the Application
 
 Start the application:
-
+   ```bash
    node index.js 
 
 Open your web browser and go to [http://localhost:3000](http://localhost:3000) to access Anime-Sphere.
