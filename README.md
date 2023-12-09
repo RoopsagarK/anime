@@ -23,3 +23,34 @@ Follow these steps to run the project locally:
 
    ```bash
    git clone https://github.com/your-username/anime-sphere.git
+   
+Navigate to the project directory:
+
+   cd anime-sphere
+
+Install dependencies:
+
+   npm install
+
+
+### Run the Application
+
+Start the application:
+
+   node index.js 
+
+Open your web browser and go to [http://localhost:3000](http://localhost:3000) to access Anime-Sphere.
+
+## Live Demo
+
+Check out the live demo of Anime-Sphere hosted at [Your Hosted Website Link](https://anime-sphere.onrender.com/).
+
+## Project Structure
+
+- **`views/`:** Contains EJS templates for different pages.
+- **`public/`:** Includes static assets such as stylesheets and client-side scripts.
+- **`index.js`:** The main server file for running the Express.js application.
+
+Happy exploring the Anime-Sphere!
+
+   
