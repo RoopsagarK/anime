@@ -13,8 +13,8 @@ Anime-Sphere is a web application that allows users to explore trending animes, 
 
 Anime-Sphere utilizes the following public APIs to fetch data:
 
-1. [Jikan]((https://jikan.moe/))
-2. [Kitsu]((https://kitsu.docs.apiary.io/))
+1. [Jikan](https://jikan.moe/)
+2. [Kitsu](https://kitsu.docs.apiary.io/)
 
 ## Tech Stack
 
