@@ -37,8 +37,8 @@ Follow these steps to run the project locally:
 
 Start the application:
    ```bash
-   node index.js 
-
+   node index.js
+   ```
 Open your web browser and go to [http://localhost:3000](http://localhost:3000) to access Anime-Sphere.
 
 ## Live Demo
