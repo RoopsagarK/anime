@@ -22,28 +22,4 @@ Follow these steps to run the project locally:
 1. Clone the repository:
 
    ```bash
-# Anime-Sphere
-
-Anime-Sphere is a web application that allows users to explore trending animes, receive personalized recommendations, and search for detailed information on any anime. The project is built using EJS, HTML, CSS, and Express.js.
-
-## Features
-
-1. **Trending Animes:** View the latest trending animes on the homepage.
-2. **Personalized Recommendations:** Receive anime recommendations based on user preferences.
-3. **Search Functionality:** Easily search for any anime using the search bar.
-4. **Anime Details:** Click on a search result card to access full information about a specific anime, including trailers.
-
-## Tech Stack
-
-- **EJS:** A template engine for rendering dynamic content on the server side.
-- **HTML and CSS:** Used for structuring and styling the web pages.
-- **Express.js:** A web application framework for Node.js that simplifies the development of web applications.
-
-## Getting Started
-
-Follow these steps to run the project locally:
-
-1. Clone the repository:
-
-   ```bash
    git clone https://github.com/your-username/anime-sphere.git
