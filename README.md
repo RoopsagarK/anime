@@ -49,7 +49,7 @@ Open your web browser and go to [http://localhost:3000](http://localhost:3000) t
 
 ## Live Demo
 
-Check out the live demo of Anime-Sphere hosted at [Your Hosted Website Link](https://anime-sphere.onrender.com/).
+Check out the live demo of Anime-Sphere hosted at [Anime-sphere](https://anime-sphere.onrender.com/).
 
 ## Project Structure
 
