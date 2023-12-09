@@ -9,6 +9,13 @@ Anime-Sphere is a web application that allows users to explore trending animes, 
 3. **Search Functionality:** Easily search for any anime using the search bar.
 4. **Anime Details:** Click on a search result card to access full information about a specific anime, including trailers.
 
+## Public APIs
+
+Anime-Sphere utilizes the following public APIs to fetch data:
+
+1. **[Jikan]([link-to-api-1](https://jikan.moe/))
+2. **[Kitsu]([link-to-api-2](https://kitsu.docs.apiary.io/))
+
 ## Tech Stack
 
 - **EJS:** A template engine for rendering dynamic content on the server side.
